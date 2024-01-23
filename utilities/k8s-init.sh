@@ -51,11 +51,12 @@ sudo apt update
 sudo apt install wget curl vim git kubelet kubeadm kubectl -y
 sudo apt-mark hold kubelet kubeadm kubectl
 
-sudo kubeadm init
+# Execute these on the master node.
+# sudo kubeadm init
 
-KUBECONFIG=/etc/kubernetes/admin.conf kubectl taint nodes --all node-role.kubernetes.io/control-plane-
+# USER=ubuntu
+# mkdir -p /home/$USER/.kube
+# sudo cp -i /etc/kubernetes/admin.conf /home/$USER/.kube/config
+# sudo chown $USER:$USER /home/$USER/.kube/config
 
-USER=ubuntu
-mkdir -p /home/$USER/.kube
-sudo cp -i /etc/kubernetes/admin.conf /home/$USER/.kube/config
-sudo chown $USER:$USER /home/$USER/.kube/config
+# KUBECONFIG=/etc/kubernetes/admin.conf kubectl taint nodes --all node-role.kubernetes.io/control-plane-
