@@ -68,6 +68,11 @@ sudo apt-mark hold kubelet kubeadm kubectl
 #   containers:
 #     - name: weave
 #       env:
-#         - name: IPALLOC_RANGE
-#           value: 192.168.0.0/16
+        # - name: IPALLOC_RANGE
+        #   value: 192.168.0.0/16
 # Refs: https://www.weave.works/docs/net/latest/kubernetes/kube-addon/#-changing-configuration-options
+
+# NOTES: 
+# - When the CNI is not available on the cluster, pods are created and assigned IPs that do not belong to
+# the CIDR range specified in kubeadm init.
+# - Once the CNI is ready, restart the coredns deployment so that its pods are assigned with proper IPs. 
