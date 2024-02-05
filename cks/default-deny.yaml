@@ -1,3 +1,6 @@
+# Deny all traffic to any pods in the default namespace.
+# Only allow traffic to port 53 for both UDP/TCP on any pods within the default namespace.
+# No ingress rule needed for coredns as it is in a different namespace. 
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy
 metadata:
@@ -8,3 +11,10 @@ spec:
   policyTypes:
   - Ingress
   - Egress
+  egress:
+  - to:
+    ports:
+      - port: 53
+        protocol: UDP
+      - port: 53
+        protocol: TCP
