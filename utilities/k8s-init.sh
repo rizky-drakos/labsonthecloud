@@ -52,12 +52,10 @@ sudo apt install wget curl vim git kubelet kubeadm kubectl -y
 sudo apt-mark hold kubelet kubeadm kubectl
 
 # Execute these on the master node.
-# sudo kubeadm init --pod-network-cidr=192.168.0.0/16
+# sudo su
+# kubeadm init --pod-network-cidr=192.168.0.0/16
 
-# USER=ubuntu
-# mkdir -p /home/$USER/.kube
-# sudo cp -i /etc/kubernetes/admin.conf /home/$USER/.kube/config
-# sudo chown $USER:$USER /home/$USER/.kube/config
+# export KUBECONFIG=/etc/kubernetes/admin.conf
 
 # Allow pods to be scheduled on master node. 
 # kubectl taint nodes --all node-role.kubernetes.io/control-plane-
