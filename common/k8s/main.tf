@@ -42,6 +42,12 @@ resource "aws_instance" "k8s-nodes" {
   tags                    = {
     Name = each.key
   }
+
+  lifecycle {
+    ignore_changes = [
+      user_data
+    ] 
+  }
 }
 
 output "public_ips" {
