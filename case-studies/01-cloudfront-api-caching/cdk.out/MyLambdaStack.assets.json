@@ -1,0 +1,32 @@
+{
+  "version": "39.0.0",
+  "files": {
+    "f8edd2b2d0571be9fbb0c237ef17a190cf1d2da6f8db9bd486281fd2d4c2b54e": {
+      "source": {
+        "path": "/Users/phathnguyen/Desktop/workspace/projects/labsonthecloud/case-studies/01-cloudfront-api-caching",
+        "packaging": "zip"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "f8edd2b2d0571be9fbb0c237ef17a190cf1d2da6f8db9bd486281fd2d4c2b54e.zip",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "f0701c0f63d3088509759477f31e18934a50cdcf7456201f8a0769648597f09a": {
+      "source": {
+        "path": "MyLambdaStack.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "f0701c0f63d3088509759477f31e18934a50cdcf7456201f8a0769648597f09a.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    }
+  },
+  "dockerImages": {}
+}
