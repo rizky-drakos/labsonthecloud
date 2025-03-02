@@ -7,7 +7,7 @@ import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Distribution } from 'aws-cdk-lib/aws-cloudfront';
 import { RestApiOrigin } from 'aws-cdk-lib/aws-cloudfront-origins';
 
-class CachingExperients extends Stack {
+export class CachingExperients extends Stack {
   constructor(scope: Construct, id: string, props?: StackProps) {
     super(scope, id, props);
 
@@ -39,9 +39,5 @@ class CachingExperients extends Stack {
             '/v1/*': { origin: apiOrigin }
         }
     });
-
   }
 }
-
-const app = new App();
-new CachingExperients(app, 'MyLambdaStack');
