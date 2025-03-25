@@ -1,4 +1,4 @@
-import { Stack, StackProps, App, RemovalPolicy } from 'aws-cdk-lib';
+import { Stack, StackProps, RemovalPolicy } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { Runtime } from 'aws-cdk-lib/aws-lambda';
 import { join } from 'path';
@@ -8,8 +8,8 @@ import { Distribution } from 'aws-cdk-lib/aws-cloudfront';
 import { RestApiOrigin } from 'aws-cdk-lib/aws-cloudfront-origins';
 
 export class CachingExperients extends Stack {
-  constructor(scope: Construct, id: string, props?: StackProps) {
-    super(scope, id, props);
+  constructor(scope: Construct, id: string) {
+    super(scope, id);
 
     const cachingFunction = new NodejsFunction(this, 'caching-function', {
         runtime: Runtime.NODEJS_20_X,
