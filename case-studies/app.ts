@@ -1,7 +1,10 @@
 import { App } from 'aws-cdk-lib';
-import { CachingExperients } from './01-cloudfront-api-caching';
-import { ResourceOverriding } from './03-cfn-resource-overriding';
+import { EKSCluster } from './02-eks-cluster';
 
 const app = new App();
-new CachingExperients(app, 'CloudFrontAPICaching');
-new ResourceOverriding(app, 'ResourceOverriding');
+new EKSCluster(app, 'ExperimentalCluster', {
+    stackName: 'experimental-cluster',
+    env: {
+        region: 'ap-southeast-1',
+    },
+});
