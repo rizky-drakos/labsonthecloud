@@ -44,7 +44,7 @@ export class EKSCluster extends Stack {
     defaultNodeGroup.role.attachInlinePolicy(
         new Policy(this, 'EKSNodeGroupPolicy', {
             document: PolicyDocument.fromJson(
-                JSON.parse(readFileSync(join(__dirname, 'iam-policy.json'), 'utf8'))
+                JSON.parse(readFileSync(join(__dirname, 'LoadBalancerControllerPolicy.json'), 'utf8'))
             )
         })
     );
