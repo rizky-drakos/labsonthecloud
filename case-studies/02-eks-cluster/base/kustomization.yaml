@@ -1,6 +1,15 @@
 resources:
+  - ./argocd.yaml
   - ./cert-manager.yaml
   # - ./app.yaml
 
 generators:
   - ./secrets-generator.yaml
+
+helmCharts:
+  - name: argo-cd
+    repo: https://argoproj.github.io/argo-helm
+    version: v8.0.0
+    releaseName: argocd
+    namespace: argocd
+    valuesFile: ./argocd-values.yaml
