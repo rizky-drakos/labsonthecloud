@@ -26,12 +26,22 @@ GPG pre-encryption replaces KMS for cost-saving secret protection before GitHub 
 gpg --import argocd.pgp.asc
 ```
 
-To edit the secrets:
+To edit the secrets, .sops.yaml is used as the SOPS default config file:
 
 ```
-// .sops.yaml is used as the SOPS default config file.
 cd enc
-sops secrets.enc.yaml
+sops secrets-letsencrypt.enc.yaml
+```
+
+Then reference the secret files in the ksops generators.
+
+```
+apiVersion: viaduct.ai/v1
+kind: ksops
+metadata:
+  name: secrets-generator
+files:
+  - ./secrets-letsencrypt.enc.yaml
 ```
 
 # References
