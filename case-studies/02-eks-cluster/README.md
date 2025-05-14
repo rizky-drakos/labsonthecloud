@@ -44,6 +44,8 @@ files:
   - ./secrets-letsencrypt.enc.yaml
 ```
 
+For ArgoCD to decryp the secrets, the private key has to be imported to its container [2].
+
 # References
-- https://blog.oddbit.com/post/2021-03-09-getting-started-with-ksops/
-- https://blog.devgenius.io/argocd-with-kustomize-and-ksops-2d43472e9d3b
+- [1] https://blog.oddbit.com/post/2021-03-09-getting-started-with-ksops/
+- [2] https://blog.devgenius.io/argocd-with-kustomize-and-ksops-2d43472e9d3b
