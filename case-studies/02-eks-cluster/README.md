@@ -50,6 +50,17 @@ files:
 
 For ArgoCD to decryp the secrets, the private key has to be imported to its container [2].
 
+# Clean-up tips
+
+Recommended steps for cleaning up all resources nicely:
+- Remove all applications installed in ArgoCD.
+- Delete all extentions but Karpenter.
+- Scale do CoreDNS to 0 so that all provisioned nodes can be deleted.
+- Delete Karpenter.
+- Delete the ELB.
+- Delete the Karpetner node role.
+- Delete the CFN stack.
+
 # References
 - [1] https://blog.oddbit.com/post/2021-03-09-getting-started-with-ksops/
 - [2] https://blog.devgenius.io/argocd-with-kustomize-and-ksops-2d43472e9d3b
