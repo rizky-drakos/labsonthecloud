@@ -34,13 +34,13 @@ export class EKSCluster extends Stack {
       ],
       inlinePolicies: {
         LoadBalancerControllerPolicy: PolicyDocument.fromJson(
-            JSON.parse(readFileSync(join(__dirname, 'LoadBalancerControllerPolicy.json'), 'utf8'))
+            JSON.parse(readFileSync(join(__dirname, 'templates/LoadBalancerControllerPolicy.json'), 'utf8'))
         )
       }
     });
 
     const kapenterResources = new CfnInclude(this, 'EksClusterTemplate', {
-        templateFile: join(__dirname, 'KarpenterResources.yaml'),
+        templateFile: join(__dirname, 'templates/KarpenterResources.yaml'),
         parameters: {
             ClusterName: cluster.clusterName,
             KarpenterNodeRoleArn: karpenterNodeRole.roleArn,
