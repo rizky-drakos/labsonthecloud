@@ -57,7 +57,7 @@ Recommended steps for cleaning up all resources nicely:
 - Delete all extentions but Karpenter.
 - Scale do CoreDNS to 0 so that all provisioned nodes can be deleted.
 - Delete Karpenter.
-- Delete the ELB.
+- Delete the ELB and its associated SGs.
 - Delete the Karpetner node role.
 - Delete the CFN stack.
 
