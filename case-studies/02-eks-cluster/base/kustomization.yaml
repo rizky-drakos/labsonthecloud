@@ -1,5 +1,2 @@
 resources:
   - ./app.yaml
-
-generators:
-  - ./generators.yaml
