@@ -1,7 +1,0 @@
-apiVersion: viaduct.ai/v1
-kind: ksops
-metadata:
-  name: secrets-generator
-files:
-  # Use the existing Letsencrypt account key instead of generating a new one.
-  - ./secrets-letsencrypt.enc.yaml

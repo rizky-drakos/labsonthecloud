@@ -1,6 +1,0 @@
-resources:
-  - ./karpenter
-  - ./aws-load-balancer-controller
-  - ./ingress-nginx
-  - ./cert-manager
-  - ./argo-cd

@@ -1,3 +1,0 @@
-creation_rules:
-  - encrypted_regex: "^(users|data|stringData)$"
-    pgp: 5B7B221B4AC823B712C2E576C52AF954DED0E907
