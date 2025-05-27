@@ -1,4 +1,4 @@
-# Projectr Structure
+# Project Structure
 
 For extentions, you can either put all helm charts within the root kustomization file or put them into individual folder as is. The advatage of the latter structure is that it makes updating individual extention easier because you can just render the template for that specific extention by updating the root kustomization file.
 
