@@ -33,7 +33,7 @@ gpg --import argocd.pgp.asc
 To edit the secrets, .sops.yaml is used as the SOPS default config file:
 
 ```
-cd enc
+cd extentions/cert-manager
 sops secrets-letsencrypt.enc.yaml
 ```
 
