@@ -1,4 +1,4 @@
-# CloudFront API Caching with AWS CDK
+# Cloudformation Resource Overriding
 
 This project demonstrates that Cloudformation does not override drifted resources when they were updated manually (as opposed to Terraform).
 
